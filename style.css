@@ -1,175 +1,416 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SharePlate connects surplus food with people and communities who need it.">
+    <title>SharePlate | Surplus Food Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f7faf7;
-  color: #1f2933;
-}
+<body>
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 7%;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span>Share<span>Plate</span></span>
+            </a>
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #218739;
-}
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#impact">Our Impact</a>
+                <a href="#about">About</a>
+            </nav>
 
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
+            <div class="nav-actions">
+                <a href="#login" class="login-btn">Login</a>
+                <a href="#donate" class="nav-donate">Donate Food</a>
+            </div>
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
+            <button class="menu-btn" aria-label="Open menu">☰</button>
+        </div>
+    </header>
 
-.hero {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #eaf8ed, #ffffff);
-}
 
-.hero-content {
-  max-width: 850px;
-}
+    <!-- Hero Section -->
+    <main>
 
-.hero h1 {
-  font-size: 52px;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  color: #176b2c;
-}
+        <section class="hero" id="home">
+            <div class="hero-bg-circle circle-one"></div>
+            <div class="hero-bg-circle circle-two"></div>
 
-.hero p {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 35px;
-}
+            <div class="container hero-container">
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        🌱 Reducing Food Waste • Feeding Communities
+                    </div>
 
-.btn {
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
+                    <h1>
+                        Turn <span>Surplus Food</span><br>
+                        Into Someone's Meal.
+                    </h1>
 
-.btn-primary {
-  background: #218739;
-  color: white;
-}
+                    <p class="hero-text">
+                        SharePlate connects restaurants, hotels, events, households
+                        and food donors with NGOs, volunteers and communities that
+                        can put surplus food to good use.
+                    </p>
 
-.btn-secondary {
-  background: white;
-  color: #218739;
-  border: 2px solid #218739;
-}
+                    <div class="hero-buttons">
+                        <a href="#donate" class="primary-btn">
+                            🍱 Donate Food
+                        </a>
 
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding: 45px 20px;
-  background: white;
-}
+                        <a href="#find-food" class="secondary-btn">
+                            🔎 Find Food
+                        </a>
+                    </div>
 
-.stat {
-  text-align: center;
-}
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <strong>1 Platform</strong>
+                            <span>For food sharing</span>
+                        </div>
 
-.stat h2 {
-  font-size: 32px;
-  color: #218739;
-}
+                        <div class="trust-divider"></div>
 
-.stat p {
-  margin-top: 8px;
-  color: #666;
-}
+                        <div class="trust-item">
+                            <strong>3 Steps</strong>
+                            <span>Simple process</span>
+                        </div>
 
-.section {
-  padding: 70px 7%;
-  text-align: center;
-}
+                        <div class="trust-divider"></div>
 
-.section h2 {
-  font-size: 34px;
-  margin-bottom: 15px;
-}
+                        <div class="trust-item">
+                            <strong>0 Waste</strong>
+                            <span>Our goal</span>
+                        </div>
+                    </div>
+                </div>
 
-.section-subtitle {
-  color: #666;
-  margin-bottom: 40px;
-}
+                <div class="hero-visual">
+                    <div class="food-card main-food-card">
+                        <div class="food-image">🍱</div>
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
+                        <div class="food-card-content">
+                            <div class="available-tag">
+                                ● Available
+                            </div>
 
-.card {
-  background: white;
-  width: 280px;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
+                            <h3>Fresh Surplus Meals</h3>
 
-.card-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
+                            <p>Ready for pickup</p>
 
-.card h3 {
-  margin-bottom: 12px;
-}
+                            <div class="food-details">
+                                <span>🍽️ 50 meals</span>
+                                <span>📍 2.4 km</span>
+                            </div>
 
-.card p {
-  color: #666;
-  line-height: 1.5;
-}
+                            <button class="claim-btn">
+                                View Donation
+                            </button>
+                        </div>
+                    </div>
 
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #176b2c;
-  color: white;
-}
+                    <div class="floating-card meals-card">
+                        <span class="floating-icon">🥗</span>
+                        <div>
+                            <strong>Fresh Food</strong>
+                            <small>Ready to share</small>
+                        </div>
+                    </div>
 
-@media (max-width: 700px) {
-  .hero h1 {
-    font-size: 38px;
-  }
+                    <div class="floating-card location-card">
+                        <span class="floating-icon">📍</span>
+                        <div>
+                            <strong>Nearby</strong>
+                            <small>Donations available</small>
+                        </div>
+                    </div>
+                </div>
 
-  .nav-links {
-    display: none;
-  }
-}
+            </div>
+        </section>
+
+
+        <!-- Quick Action Section -->
+        <section class="quick-actions">
+            <div class="container quick-grid">
+
+                <a href="#donate" class="quick-card donate-card">
+                    <div class="quick-icon">🍱</div>
+                    <div>
+                        <h3>I Have Surplus Food</h3>
+                        <p>Donate safe, edible food instead of wasting it.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="#find-food" class="quick-card find-card">
+                    <div class="quick-icon">🔎</div>
+                    <div>
+                        <h3>I Need Food</h3>
+                        <p>Find available food donations near you.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- How It Works -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">HOW IT WORKS</span>
+                    <h2>From Extra Food to <span>Extra Hope</span></h2>
+                    <p>
+                        SharePlate makes food redistribution simple, transparent
+                        and accessible.
+                    </p>
+                </div>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">📋</div>
+                        <h3>Post a Donation</h3>
+                        <p>
+                            Donors add details about their surplus food,
+                            quantity and pickup location.
+                        </p>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">🔎</div>
+                        <h3>Find & Request</h3>
+                        <p>
+                            NGOs, volunteers and eligible recipients
+                            discover nearby available food.
+                        </p>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">🤝</div>
+                        <h3>Collect & Share</h3>
+                        <p>
+                            Food is collected and redistributed to people
+                            and communities who need it.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Impact -->
+        <section class="impact-section" id="impact">
+            <div class="container">
+
+                <div class="section-heading light">
+                    <span class="section-label">OUR MISSION</span>
+                    <h2>Every Meal Shared Makes a Difference</h2>
+                    <p>
+                        Food that might have been wasted can become meaningful
+                        support for someone else.
+                    </p>
+                </div>
+
+                <div class="impact-grid">
+
+                    <div class="impact-card">
+                        <span>🍽️</span>
+                        <strong>0</strong>
+                        <p>Meals Shared</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <span>♻️</span>
+                        <strong>0 kg</strong>
+                        <p>Food Saved</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <span>🤝</span>
+                        <strong>0</strong>
+                        <p>Donors Connected</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <span>🌱</span>
+                        <strong>0</strong>
+                        <p>Communities Reached</p>
+                    </div>
+
+                </div>
+
+                <p class="impact-note">
+                    *Impact numbers will update as the platform grows.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Donate CTA -->
+        <section class="cta-section" id="donate">
+            <div class="container cta-container">
+
+                <div>
+                    <span class="section-label">READY TO HELP?</span>
+                    <h2>Have Extra Food?<br>Share It, Don't Waste It.</h2>
+                    <p>
+                        One simple donation can help turn surplus food into
+                        a valuable meal.
+                    </p>
+                </div>
+
+                <a href="#login" class="primary-btn white-btn">
+                    Start a Donation →
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Find Food -->
+        <section class="section find-section" id="find-food">
+            <div class="container find-container">
+
+                <div class="find-content">
+                    <span class="section-label">FIND FOOD</span>
+                    <h2>Food Available <span>Near You</span></h2>
+                    <p>
+                        Discover available surplus food and connect with
+                        verified donors and community organizations.
+                    </p>
+
+                    <a href="#login" class="secondary-btn">
+                        Explore Donations →
+                    </a>
+                </div>
+
+                <div class="location-box">
+                    <div class="map-placeholder">
+                        <span>📍</span>
+                        <h3>Location-Based Food Discovery</h3>
+                        <p>
+                            Nearby donation listings will appear here.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- About -->
+        <section class="about-section" id="about">
+            <div class="container about-container">
+
+                <div class="about-logo">🍽️</div>
+
+                <div>
+                    <span class="section-label">ABOUT SHAREPLATE</span>
+                    <h2>Technology With a <span>Purpose</span></h2>
+                    <p>
+                        SharePlate is designed to create a digital bridge between
+                        surplus food and communities that can benefit from it.
+                        Our goal is to make food redistribution easier through
+                        transparent listings, location-based discovery and
+                        coordinated pickups.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Login Placeholder -->
+        <section class="login-section" id="login">
+            <div class="container login-box">
+
+                <div>
+                    <span class="section-label">JOIN SHAREPLATE</span>
+                    <h2>Be Part of the Solution</h2>
+                    <p>
+                        Sign in or create an account to donate food,
+                        discover donations and participate in the platform.
+                    </p>
+                </div>
+
+                <div class="login-buttons">
+                    <button class="primary-btn">Login</button>
+                    <button class="secondary-btn">Create Account</button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🍽️</span>
+                    <span>Share<span>Plate</span></span>
+                </a>
+
+                <p>
+                    Connecting surplus food with people who need it.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Platform</h4>
+                    <a href="#donate">Donate Food</a>
+                    <a href="#find-food">Find Food</a>
+                    <a href="#how-it-works">How It Works</a>
+                </div>
+
+                <div>
+                    <h4>About</h4>
+                    <a href="#about">Our Mission</a>
+                    <a href="#impact">Impact</a>
+                    <a href="#login">Join Us</a>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@shareplate.org">Email Us</a>
+                    <a href="#about">Learn More</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 SharePlate. Built to reduce food waste and support communities.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
