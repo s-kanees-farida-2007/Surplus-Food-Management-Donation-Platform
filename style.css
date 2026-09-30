@@ -1,991 +1,416 @@
-```css
-/* ==============================
-   SHAREPLATE
-   Surplus Food Management
-   ============================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #173b2f;
-    background: #ffffff;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-}
-
-.container {
-    width: min(1160px, 92%);
-    margin: 0 auto;
-}
-
-
-/* ==============================
-   NAVBAR
-   ============================== */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.96);
-    border-bottom: 1px solid #e8eee9;
-    backdrop-filter: blur(12px);
-}
-
-.nav-container {
-    height: 76px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 24px;
-    font-weight: 800;
-    color: #183d31;
-}
-
-.logo > span:last-child > span {
-    color: #f47c20;
-}
-
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    display: grid;
-    place-items: center;
-    background: #eaf7ef;
-    font-size: 21px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #557067;
-}
-
-.nav-links a {
-    transition: 0.2s;
-}
-
-.nav-links a:hover {
-    color: #f47c20;
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.login-btn {
-    padding: 10px 17px;
-    color: #24483c;
-    font-weight: 700;
-}
-
-.nav-donate {
-    padding: 11px 19px;
-    color: #ffffff;
-    background: #f47c20;
-    border-radius: 10px;
-    font-weight: 700;
-    box-shadow: 0 8px 20px rgba(244, 124, 32, 0.18);
-}
-
-.menu-btn {
-    display: none;
-    border: 0;
-    background: transparent;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-
-/* ==============================
-   HERO
-   ============================== */
-
-.hero {
-    position: relative;
-    overflow: hidden;
-    background:
-        linear-gradient(135deg, #f7fcf8 0%, #edf8f0 52%, #fff8f0 100%);
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-}
-
-.hero-bg-circle {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.circle-one {
-    width: 430px;
-    height: 430px;
-    background: rgba(73, 167, 107, 0.07);
-    right: -150px;
-    top: -160px;
-}
-
-.circle-two {
-    width: 260px;
-    height: 260px;
-    background: rgba(244, 124, 32, 0.06);
-    left: -110px;
-    bottom: -100px;
-}
-
-.hero-container {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    align-items: center;
-    gap: 70px;
-    padding: 75px 0;
-}
-
-.hero-badge {
-    display: inline-block;
-    padding: 8px 13px;
-    border-radius: 50px;
-    background: #ffffff;
-    color: #3f7259;
-    border: 1px solid #dbece0;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 22px;
-}
-
-.hero h1 {
-    font-size: clamp(43px, 5vw, 68px);
-    line-height: 1.08;
-    letter-spacing: -2px;
-    color: #173b2f;
-    margin-bottom: 23px;
-}
-
-.hero h1 span {
-    color: #f47c20;
-}
-
-.hero-text {
-    max-width: 600px;
-    color: #5e746b;
-    font-size: 17px;
-    line-height: 1.75;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-    margin-top: 30px;
-}
-
-.primary-btn,
-.secondary-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 12px 21px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 800;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.primary-btn {
-    background: #f47c20;
-    color: #ffffff;
-    box-shadow: 0 12px 25px rgba(244, 124, 32, 0.22);
-}
-
-.secondary-btn {
-    background: #ffffff;
-    color: #245440;
-    border: 1px solid #cfe0d4;
-}
-
-.primary-btn:hover,
-.secondary-btn:hover,
-.nav-donate:hover {
-    transform: translateY(-2px);
-}
-
-.hero-trust {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.trust-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.trust-item strong {
-    font-size: 17px;
-    color: #214d3d;
-}
-
-.trust-item span {
-    font-size: 12px;
-    color: #789087;
-}
-
-.trust-divider {
-    width: 1px;
-    height: 36px;
-    background: #ccdcd2;
-    margin: 0 22px;
-}
-
-
-/* Hero Visual */
-
-.hero-visual {
-    position: relative;
-    min-height: 470px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main-food-card {
-    width: min(350px, 85%);
-    background: #ffffff;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 30px 70px rgba(42, 78, 61, 0.16);
-    transform: rotate(1.5deg);
-}
-
-.food-image {
-    height: 205px;
-    display: grid;
-    place-items: center;
-    background:
-        radial-gradient(circle at 30% 30%, #ffffff 0 7%, transparent 8%),
-        linear-gradient(135deg, #dcefe2, #fff0df);
-    font-size: 100px;
-}
-
-.food-card-content {
-    padding: 22px;
-}
-
-.available-tag {
-    display: inline-block;
-    color: #25804b;
-    background: #e8f7ed;
-    padding: 5px 9px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 800;
-}
-
-.food-card h3 {
-    margin-top: 10px;
-    font-size: 21px;
-}
-
-.food-card-content p {
-    color: #7a8c84;
-    font-size: 13px;
-    margin: 3px 0 14px;
-}
-
-.food-details {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #526c60;
-    margin-bottom: 17px;
-}
-
-.claim-btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 9px;
-    color: #ffffff;
-    background: #214d3d;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.floating-card {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 13px 15px;
-    box-shadow: 0 15px 35px rgba(39, 73, 56, 0.13);
-}
-
-.floating-icon {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    background: #edf8f0;
-    border-radius: 10px;
-}
-
-.floating-card strong,
-.floating-card small {
-    display: block;
-}
-
-.floating-card strong {
-    font-size: 12px;
-    color: #274c3e;
-}
-
-.floating-card small {
-    font-size: 10px;
-    color: #84958d;
-}
-
-.meals-card {
-    top: 55px;
-    right: 8px;
-}
-
-.location-card {
-    bottom: 55px;
-    left: 3px;
-}
-
-
-/* ==============================
-   QUICK ACTIONS
-   ============================== */
-
-.quick-actions {
-    padding: 28px 0;
-    background: #ffffff;
-}
-
-.quick-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.quick-card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    padding: 22px;
-    border: 1px solid #e2ebe5;
-    border-radius: 16px;
-    transition: 0.2s;
-}
-
-.quick-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(36, 73, 56, 0.08);
-}
-
-.quick-icon {
-    width: 53px;
-    height: 53px;
-    border-radius: 14px;
-    display: grid;
-    place-items: center;
-    font-size: 25px;
-}
-
-.donate-card .quick-icon {
-    background: #fff1e6;
-}
-
-.find-card .quick-icon {
-    background: #eaf7ef;
-}
-
-.quick-card h3 {
-    font-size: 16px;
-    color: #214b3b;
-}
-
-.quick-card p {
-    font-size: 12px;
-    color: #768981;
-}
-
-.arrow {
-    margin-left: auto;
-    font-size: 22px;
-    color: #f47c20;
-}
-
-
-/* ==============================
-   GENERAL SECTIONS
-   ============================== */
-
-.section {
-    padding: 95px 0;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 55px;
-}
-
-.section-label {
-    display: inline-block;
-    color: #f47c20;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 1.8px;
-    margin-bottom: 11px;
-}
-
-.section-heading h2,
-.find-content h2,
-.about-container h2,
-.login-box h2,
-.cta-container h2 {
-    font-size: clamp(30px, 4vw, 45px);
-    line-height: 1.15;
-    color: #173b2f;
-    letter-spacing: -1px;
-}
-
-.section-heading h2 span,
-.find-content h2 span,
-.about-container h2 span {
-    color: #f47c20;
-}
-
-.section-heading p {
-    color: #71847c;
-    margin-top: 13px;
-}
-
-
-/* ==============================
-   STEPS
-   ============================== */
-
-.steps {
-    display: grid;
-    grid-template-columns: 1fr 70px 1fr 70px 1fr;
-    align-items: center;
-}
-
-.step {
-    position: relative;
-    text-align: center;
-    padding: 20px;
-}
-
-.step-number {
-    color: #b4c6bc;
-    font-size: 12px;
-    font-weight: 900;
-    margin-bottom: 12px;
-}
-
-.step-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 18px;
-    display: grid;
-    place-items: center;
-    background: #edf8f0;
-    border-radius: 20px;
-    font-size: 30px;
-}
-
-.step h3 {
-    color: #214b3b;
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.step p {
-    color: #788981;
-    font-size: 13px;
-}
-
-.step-line {
-    height: 1px;
-    border-top: 2px dashed #d4e3d9;
-}
-
-
-/* ==============================
-   IMPACT
-   ============================== */
-
-.impact-section {
-    padding: 90px 0;
-    background: #173b2f;
-}
-
-.section-heading.light h2 {
-    color: #ffffff;
-}
-
-.section-heading.light p {
-    color: #b9cbc2;
-}
-
-.impact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-.impact-card {
-    padding: 28px 20px;
-    text-align: center;
-    background: #214b3d;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 17px;
-}
-
-.impact-card span {
-    display: block;
-    font-size: 27px;
-    margin-bottom: 10px;
-}
-
-.impact-card strong {
-    display: block;
-    color: #ffffff;
-    font-size: 31px;
-}
-
-.impact-card p {
-    color: #b6c9bf;
-    font-size: 12px;
-}
-
-.impact-note {
-    text-align: center;
-    margin-top: 22px;
-    color: #93aba0;
-    font-size: 11px;
-}
-
-
-/* ==============================
-   CTA
-   ============================== */
-
-.cta-section {
-    padding: 75px 0;
-    background: #f47c20;
-}
-
-.cta-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.cta-container .section-label {
-    color: #fff4e9;
-}
-
-.cta-container h2 {
-    color: #ffffff;
-}
-
-.cta-container p {
-    color: #fff0df;
-    margin-top: 12px;
-}
-
-.white-btn {
-    background: #ffffff;
-    color: #214b3b;
-    box-shadow: 0 12px 25px rgba(91, 46, 10, 0.14);
-    white-space: nowrap;
-}
-
-
-/* ==============================
-   FIND FOOD
-   ============================== */
-
-.find-container {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    align-items: center;
-    gap: 70px;
-}
-
-.find-content p {
-    color: #71847c;
-    margin: 18px 0 25px;
-    max-width: 520px;
-}
-
-.location-box {
-    min-height: 350px;
-    border-radius: 25px;
-    padding: 20px;
-    background:
-        linear-gradient(rgba(234, 247, 239, 0.7), rgba(234, 247, 239, 0.7)),
-        repeating-linear-gradient(
-            45deg,
-            #e4efe7,
-            #e4efe7 10px,
-            #edf5ef 10px,
-            #edf5ef 20px
-        );
-    display: grid;
-    place-items: center;
-}
-
-.map-placeholder {
-    width: 75%;
-    padding: 38px 25px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.94);
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(44, 82, 61, 0.1);
-}
-
-.map-placeholder span {
-    display: block;
-    font-size: 45px;
-    margin-bottom: 12px;
-}
-
-.map-placeholder h3 {
-    color: #214b3b;
-}
-
-.map-placeholder p {
-    color: #788981;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-
-/* ==============================
-   ABOUT
-   ============================== */
-
-.about-section {
-    padding: 80px 0;
-    background: #f7faf8;
-}
-
-.about-container {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    align-items: center;
-    gap: 45px;
-}
-
-.about-logo {
-    width: 140px;
-    height: 140px;
-    display: grid;
-    place-items: center;
-    border-radius: 35px;
-    background: #eaf7ef;
-    font-size: 60px;
-}
-
-.about-container p {
-    color: #71847c;
-    max-width: 780px;
-    margin-top: 16px;
-}
-
-
-/* ==============================
-   LOGIN
-   ============================== */
-
-.login-section {
-    padding: 80px 0;
-}
-
-.login-box {
-    padding: 45px;
-    border-radius: 22px;
-    background: #edf8f0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 35px;
-}
-
-.login-box p {
-    color: #71847c;
-    margin-top: 12px;
-    max-width: 600px;
-}
-
-.login-buttons {
-    display: flex;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-
-/* ==============================
-   FOOTER
-   ============================== */
-
-.footer {
-    background: #102d24;
-    color: #ffffff;
-}
-
-.footer-container {
-    padding: 55px 0;
-    display: flex;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.footer-brand {
-    max-width: 300px;
-}
-
-.footer-brand .logo {
-    color: #ffffff;
-}
-
-.footer-brand p {
-    color: #9eb3aa;
-    margin-top: 15px;
-    font-size: 13px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 80px;
-}
-
-.footer-links div {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.footer-links h4 {
-    color: #ffffff;
-    margin-bottom: 8px;
-    font-size: 13px;
-}
-
-.footer-links a {
-    color: #9eb3aa;
-    font-size: 12px;
-}
-
-.footer-links a:hover {
-    color: #f47c20;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-bottom p {
-    padding: 18px 0;
-    color: #758e84;
-    font-size: 11px;
-}
-
-
-/* ==============================
-   RESPONSIVE
-   ============================== */
-
-@media (max-width: 900px) {
-
-    .nav-links,
-    .nav-actions {
-        display: none;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .hero-container,
-    .find-container {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .hero {
-        min-height: auto;
-    }
-
-    .hero-content {
-        text-align: center;
-    }
-
-    .hero-text {
-        margin: auto;
-    }
-
-    .hero-buttons,
-    .hero-trust {
-        justify-content: center;
-    }
-
-    .hero-visual {
-        min-height: 430px;
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .step-line {
-        display: none;
-    }
-
-    .impact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .cta-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-logo {
-        margin: auto;
-    }
-
-    .about-container p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .login-box {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .container {
-        width: min(92%, 520px);
-    }
-
-    .hero h1 {
-        font-size: 42px;
-        letter-spacing: -1.5px;
-    }
-
-    .hero-trust {
-        gap: 10px;
-    }
-
-    .trust-divider {
-        margin: 0 8px;
-    }
-
-    .quick-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .impact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .impact-card {
-        padding: 20px 10px;
-    }
-
-    .impact-card strong {
-        font-size: 25px;
-    }
-
-    .footer-container {
-        flex-direction: column;
-    }
-
-    .footer-links {
-        gap: 35px;
-        flex-wrap: wrap;
-    }
-
-    .main-food-card {
-        width: 85%;
-    }
-
-    .meals-card {
-        right: 0;
-    }
-
-    .location-card {
-        left: 0;
-    }
-
-    .login-box {
-        padding: 30px 20px;
-    }
-
-    .login-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .login-buttons button {
-        width: 100%;
-    }
-}
-```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SharePlate connects surplus food with people and communities who need it.">
+    <title>SharePlate | Surplus Food Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span>Share<span>Plate</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#impact">Our Impact</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#login" class="login-btn">Login</a>
+                <a href="#donate" class="nav-donate">Donate Food</a>
+            </div>
+
+            <button class="menu-btn" aria-label="Open menu">☰</button>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+            <div class="hero-bg-circle circle-one"></div>
+            <div class="hero-bg-circle circle-two"></div>
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        🌱 Reducing Food Waste • Feeding Communities
+                    </div>
+
+                    <h1>
+                        Turn <span>Surplus Food</span><br>
+                        Into Someone's Meal.
+                    </h1>
+
+                    <p class="hero-text">
+                        SharePlate connects restaurants, hotels, events, households
+                        and food donors with NGOs, volunteers and communities that
+                        can put surplus food to good use.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#donate" class="primary-btn">
+                            🍱 Donate Food
+                        </a>
+
+                        <a href="#find-food" class="secondary-btn">
+                            🔎 Find Food
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <strong>1 Platform</strong>
+                            <span>For food sharing</span>
+                        </div>
+
+                        <div class="trust-divider"></div>
+
+                        <div class="trust-item">
+                            <strong>3 Steps</strong>
+                            <span>Simple process</span>
+                        </div>
+
+                        <div class="trust-divider"></div>
+
+                        <div class="trust-item">
+                            <strong>0 Waste</strong>
+                            <span>Our goal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="food-card main-food-card">
+                        <div class="food-image">🍱</div>
+
+                        <div class="food-card-content">
+                            <div class="available-tag">
+                                ● Available
+                            </div>
+
+                            <h3>Fresh Surplus Meals</h3>
+
+                            <p>Ready for pickup</p>
+
+                            <div class="food-details">
+                                <span>🍽️ 50 meals</span>
+                                <span>📍 2.4 km</span>
+                            </div>
+
+                            <button class="claim-btn">
+                                View Donation
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="floating-card meals-card">
+                        <span class="floating-icon">🥗</span>
+                        <div>
+                            <strong>Fresh Food</strong>
+                            <small>Ready to share</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card location-card">
+                        <span class="floating-icon">📍</span>
+                        <div>
+                            <strong>Nearby</strong>
+                            <small>Donations available</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Quick Action Section -->
+        <section class="quick-actions">
+            <div class="container quick-grid">
+
+                <a href="#donate" class="quick-card donate-card">
+                    <div class="quick-icon">🍱</div>
+                    <div>
+                        <h3>I Have Surplus Food</h3>
+                        <p>Donate safe, edible food instead of wasting it.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="#find-food" class="quick-card find-card">
+                    <div class="quick-icon">🔎</div>
+                    <div>
+                        <h3>I Need Food</h3>
+                        <p>Find available food donations near you.</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- How It Works -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">HOW IT WORKS</span>
+                    <h2>From Extra Food to <span>Extra Hope</span></h2>
+                    <p>
+                        SharePlate makes food redistribution simple, transparent
+                        and accessible.
+                    </p>
+                </div>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">📋</div>
+                        <h3>Post a Donation</h3>
+                        <p>
+                            Donors add details about their surplus food,
+                            quantity and pickup location.
+                        </p>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">🔎</div>
+                        <h3>Find & Request</h3>
+                        <p>
+                            NGOs, volunteers and eligible recipients
+                            discover nearby available food.
+                        </p>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">🤝</div>
+                        <h3>Collect & Share</h3>
+                        <p>
+                            Food is collected and redistributed to people
+                            and communities who need it.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Impact -->
+        <section class="impact-section" id="impact">
+            <div class="container">
+
+                <div class="section-heading light">
+                    <span class="section-label">OUR MISSION</span>
+                    <h2>Every Meal Shared Makes a Difference</h2>
+                    <p>
+                        Food that might have been wasted can become meaningful
+                        support for someone else.
+                    </p>
+                </div>
+
+                <div class="impact-grid">
+
+                    <div class="impact-card">
+                        <span>🍽️</span>
+                        <strong>0</strong>
+                        <p>Meals Shared</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <span>♻️</span>
+                        <strong>0 kg</strong>
+                        <p>Food Saved</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <span>🤝</span>
+                        <strong>0</strong>
+                        <p>Donors Connected</p>
+                    </div>
+
+                    <div class="impact-card">
+                        <span>🌱</span>
+                        <strong>0</strong>
+                        <p>Communities Reached</p>
+                    </div>
+
+                </div>
+
+                <p class="impact-note">
+                    *Impact numbers will update as the platform grows.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- Donate CTA -->
+        <section class="cta-section" id="donate">
+            <div class="container cta-container">
+
+                <div>
+                    <span class="section-label">READY TO HELP?</span>
+                    <h2>Have Extra Food?<br>Share It, Don't Waste It.</h2>
+                    <p>
+                        One simple donation can help turn surplus food into
+                        a valuable meal.
+                    </p>
+                </div>
+
+                <a href="#login" class="primary-btn white-btn">
+                    Start a Donation →
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Find Food -->
+        <section class="section find-section" id="find-food">
+            <div class="container find-container">
+
+                <div class="find-content">
+                    <span class="section-label">FIND FOOD</span>
+                    <h2>Food Available <span>Near You</span></h2>
+                    <p>
+                        Discover available surplus food and connect with
+                        verified donors and community organizations.
+                    </p>
+
+                    <a href="#login" class="secondary-btn">
+                        Explore Donations →
+                    </a>
+                </div>
+
+                <div class="location-box">
+                    <div class="map-placeholder">
+                        <span>📍</span>
+                        <h3>Location-Based Food Discovery</h3>
+                        <p>
+                            Nearby donation listings will appear here.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- About -->
+        <section class="about-section" id="about">
+            <div class="container about-container">
+
+                <div class="about-logo">🍽️</div>
+
+                <div>
+                    <span class="section-label">ABOUT SHAREPLATE</span>
+                    <h2>Technology With a <span>Purpose</span></h2>
+                    <p>
+                        SharePlate is designed to create a digital bridge between
+                        surplus food and communities that can benefit from it.
+                        Our goal is to make food redistribution easier through
+                        transparent listings, location-based discovery and
+                        coordinated pickups.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Login Placeholder -->
+        <section class="login-section" id="login">
+            <div class="container login-box">
+
+                <div>
+                    <span class="section-label">JOIN SHAREPLATE</span>
+                    <h2>Be Part of the Solution</h2>
+                    <p>
+                        Sign in or create an account to donate food,
+                        discover donations and participate in the platform.
+                    </p>
+                </div>
+
+                <div class="login-buttons">
+                    <button class="primary-btn">Login</button>
+                    <button class="secondary-btn">Create Account</button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🍽️</span>
+                    <span>Share<span>Plate</span></span>
+                </a>
+
+                <p>
+                    Connecting surplus food with people who need it.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Platform</h4>
+                    <a href="#donate">Donate Food</a>
+                    <a href="#find-food">Find Food</a>
+                    <a href="#how-it-works">How It Works</a>
+                </div>
+
+                <div>
+                    <h4>About</h4>
+                    <a href="#about">Our Mission</a>
+                    <a href="#impact">Impact</a>
+                    <a href="#login">Join Us</a>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@shareplate.org">Email Us</a>
+                    <a href="#about">Learn More</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 SharePlate. Built to reduce food waste and support communities.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
